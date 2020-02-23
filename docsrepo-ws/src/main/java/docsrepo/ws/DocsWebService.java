@@ -10,12 +10,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-@WebService(serviceName = "DocsRepoService")
-public class DocsRepoWebService {
+@WebService(serviceName = "DocsService")
+public class DocsWebService {
 
     private final EntityManagerFactory emf;
 
-    public DocsRepoWebService() {
+    public DocsWebService() {
         this.emf = Persistence.createEntityManagerFactory("docsrepoPU");
     }
 

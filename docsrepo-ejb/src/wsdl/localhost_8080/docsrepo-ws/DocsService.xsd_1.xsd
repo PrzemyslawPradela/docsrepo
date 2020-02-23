@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.3.payara-p3 (2.4.3.payara-maintenance-a5c1c68; 2019-06-17T14:04:38+0200) JAXWS-RI/2.3.2.payara-p2 JAXWS-API/2.3.2 JAXB-RI/2.3.2 JAXB-API/2.3.2 git-revision#unknown. --><xs:schema xmlns:tns="http://ws.docsrepo/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.docsrepo/">
+
+<xs:element name="createDocument" type="tns:createDocument"/>
+
+<xs:element name="document" type="tns:document"/>
+
+<xs:element name="getDocument" type="tns:getDocument"/>
+
+<xs:element name="getDocumentResponse" type="tns:getDocumentResponse"/>
+
+<xs:element name="getDocuments" type="tns:getDocuments"/>
+
+<xs:element name="getDocumentsResponse" type="tns:getDocumentsResponse"/>
+
+<xs:element name="removeDocument" type="tns:removeDocument"/>
+
+<xs:element name="updateDocument" type="tns:updateDocument"/>
+
+<xs:complexType name="getDocument">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDocumentResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:document" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="document">
+<xs:sequence>
+<xs:element name="contentDescription" type="xs:string" minOccurs="0"/>
+<xs:element name="file" type="xs:base64Binary" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateDocument">
+<xs:sequence>
+<xs:element name="doc" type="tns:document" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createDocument">
+<xs:sequence>
+<xs:element name="doc" type="tns:document" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeDocument">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDocuments">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getDocumentsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:document" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
