@@ -15,11 +15,15 @@ public class DocsServiceBean {
     @WebServiceRef(wsdlLocation = "http://localhost:8080/docsrepo-ws/DocsService?wsdl")
     private DocsService service;
 
-    public void addDocument(Document doc) {
+    public void addDocument(String name, String contentDescription, byte[] file) {
 
         try { // Call Web Service Operation
             DocsWebService port = service.getDocsWebServicePort();
-            port.createDocument(doc);
+            Document document = new Document();
+            document.setName(name);
+            document.setContentDescription(contentDescription);
+            document.setFile(file);
+            port.createDocument(document);
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }

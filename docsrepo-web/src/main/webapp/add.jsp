@@ -12,21 +12,21 @@
     <body>
         <header></header>
         <div class="container mt-5 mb-5" style="width: 45%">
-            <form>
+            <form action="UploadServlet" enctype="multipart/form-data" method="post">
                 <fieldset>
                     <div class="form-group">
                         <label for="inputName">Nazwa dokumentu</label>
-                        <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp" placeholder="Wpisz nazwę dokumentu">
+                        <input type="text" class="form-control" id="inputName" name="name" aria-describedby="nameHelp" placeholder="Wpisz nazwę dokumentu">
                         <small id="nameHelp" class="form-text text-muted">Maksymalna długość nazwy dokumentu to 512 znaków</small>
                     </div>
                     <div class="form-group">
                         <label for="contentDesTextarea">Opis zawartości dokumentu</label>
-                        <textarea class="form-control" id="contentDesTextarea" rows="10" aria-describedby="contentDesHelp"></textarea>
+                        <textarea class="form-control" id="contentDesTextarea" name="contentDescription" rows="10" aria-describedby="contentDesHelp"></textarea>
                         <small id="contentDesHelp" class="form-text text-muted">Maksymalna długość opisu zawartości dokumentu to 2048 znaków</small>
                     </div>
                     <div class="form-group">
                         <label for="inputFile"><i class="fas fa-file-word fa-2x"></i> Wybierz plik</label>
-                        <input type="file" accept="application/msword" class="form-control-file" id="inputFile" aria-describedby="fileHelp">
+                        <input type="file" accept="application/msword" class="form-control-file" id="inputFile" name="file" aria-describedby="fileHelp">
                         <small id="fileHelp" class="form-text text-muted">Akceptowane są pliki z rozszerzeniem *.doc</small>
                     </div>
                     <button type="submit" class="btn btn-primary" id="submit" disabled><i class="fas fa-file-upload fa-lg"></i> Dodaj</button>
