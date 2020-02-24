@@ -9,8 +9,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.4.1/sketchy/bootstrap.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
+        <link rel="icon" href="images/logo.png">
     </head>
     <body>
+        <jsp:include page="IndexServlet"/>
         <header></header>
         <div class="container mt-5 mb-5">
             <div class="table-responsive">
@@ -19,9 +21,16 @@
                     <thead>
                     </thead>
                     <tbody>
-                        <tr class="table-primary">
-                            <td>Column content</td>
-                        </tr>
+                        <c:forEach var="document" items="${documents}">
+                            <tr>
+                                <td>
+                                    <i class="fas fa-file-word fa-2x"></i>
+                                    <a class="btn btn-link" href="PreviewServlet?id=${document.id}" style="font-size: 180%">
+                                        ${document.name}
+                                    </a>
+                                </td>
+                            </tr>
+                        </c:forEach>
                     </tbody>
                 </table>
             </div>

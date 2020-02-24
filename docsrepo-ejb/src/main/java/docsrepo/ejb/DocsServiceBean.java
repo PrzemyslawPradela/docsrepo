@@ -30,11 +30,23 @@ public class DocsServiceBean {
 
     }
 
-    public void updateDocument(Document doc) {
+    public void updateDocument(int id, String name, String contentDescription, byte[] file) {
 
         try { // Call Web Service Operation
             DocsWebService port = service.getDocsWebServicePort();
-            port.updateDocument(doc);
+            Document document = port.getDocument(id);
+            if (!name.isEmpty() && !name.equals(document.getName())) {
+                document.setName(name);
+                port.updateDocument(document);
+            }
+            if (!contentDescription.isEmpty() && !contentDescription.equals(document.getContentDescription())) {
+                document.setContentDescription(contentDescription);
+                port.updateDocument(document);
+            }
+            if (file != null) {
+                document.setFile(file);
+                port.updateDocument(document);
+            }
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
