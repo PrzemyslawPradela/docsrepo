@@ -4,14 +4,8 @@
 <xsd:import namespace="http://ws.docsrepo/" schemaLocation="http://localhost:8080/docsrepo-ws/DocsService?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="getDocuments">
-<part name="parameters" element="tns:getDocuments"/>
-</message>
-<message name="getDocumentsResponse">
-<part name="parameters" element="tns:getDocumentsResponse"/>
-</message>
-<message name="updateDocument">
-<part name="parameters" element="tns:updateDocument"/>
+<message name="removeDocument">
+<part name="parameters" element="tns:removeDocument"/>
 </message>
 <message name="createDocument">
 <part name="parameters" element="tns:createDocument"/>
@@ -22,16 +16,18 @@
 <message name="getDocumentResponse">
 <part name="parameters" element="tns:getDocumentResponse"/>
 </message>
-<message name="removeDocument">
-<part name="parameters" element="tns:removeDocument"/>
+<message name="getDocuments">
+<part name="parameters" element="tns:getDocuments"/>
+</message>
+<message name="getDocumentsResponse">
+<part name="parameters" element="tns:getDocumentsResponse"/>
+</message>
+<message name="updateDocument">
+<part name="parameters" element="tns:updateDocument"/>
 </message>
 <portType name="DocsWebService">
-<operation name="getDocuments">
-<input wsam:Action="http://ws.docsrepo/DocsWebService/getDocumentsRequest" message="tns:getDocuments"/>
-<output wsam:Action="http://ws.docsrepo/DocsWebService/getDocumentsResponse" message="tns:getDocumentsResponse"/>
-</operation>
-<operation name="updateDocument">
-<input wsam:Action="http://ws.docsrepo/DocsWebService/updateDocument" message="tns:updateDocument"/>
+<operation name="removeDocument">
+<input wsam:Action="http://ws.docsrepo/DocsWebService/removeDocument" message="tns:removeDocument"/>
 </operation>
 <operation name="createDocument">
 <input wsam:Action="http://ws.docsrepo/DocsWebService/createDocument" message="tns:createDocument"/>
@@ -40,22 +36,17 @@
 <input wsam:Action="http://ws.docsrepo/DocsWebService/getDocumentRequest" message="tns:getDocument"/>
 <output wsam:Action="http://ws.docsrepo/DocsWebService/getDocumentResponse" message="tns:getDocumentResponse"/>
 </operation>
-<operation name="removeDocument">
-<input wsam:Action="http://ws.docsrepo/DocsWebService/removeDocument" message="tns:removeDocument"/>
+<operation name="getDocuments">
+<input wsam:Action="http://ws.docsrepo/DocsWebService/getDocumentsRequest" message="tns:getDocuments"/>
+<output wsam:Action="http://ws.docsrepo/DocsWebService/getDocumentsResponse" message="tns:getDocumentsResponse"/>
+</operation>
+<operation name="updateDocument">
+<input wsam:Action="http://ws.docsrepo/DocsWebService/updateDocument" message="tns:updateDocument"/>
 </operation>
 </portType>
 <binding name="DocsWebServicePortBinding" type="tns:DocsWebService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="getDocuments">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="updateDocument">
+<operation name="removeDocument">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -76,7 +67,16 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="removeDocument">
+<operation name="getDocuments">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="updateDocument">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
