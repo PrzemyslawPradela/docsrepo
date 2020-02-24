@@ -10,7 +10,6 @@ Service with doc files
 Project is created with:
 * Java EE version: 8
 * EJB version: 3.1
-* JPA version: 2.1
 * Hibernate version: 5.4.12
 * Apache Commons IO version: 2.2
 * Apache Derby version: 10.14.2
