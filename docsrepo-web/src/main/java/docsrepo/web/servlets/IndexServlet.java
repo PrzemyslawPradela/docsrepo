@@ -1,7 +1,7 @@
 package docsrepo.web.servlets;
 
 import docsrepo.ejb.DocsServiceBean;
-import docsrepo.ws.client.Document;
+import docsrepo.ejb.soap.client.Document;
 import java.io.IOException;
 import java.util.List;
 import javax.ejb.EJB;

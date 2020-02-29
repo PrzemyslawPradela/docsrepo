@@ -1,7 +1,7 @@
-package docsrepo.ws;
+package docsrepo.soap;
 
-import docsrepo.ws.entities.Document;
-import docsrepo.ws.utils.HibernateUtil;
+import docsrepo.soap.entities.Document;
+import docsrepo.soap.utils.HibernateUtil;
 import java.util.List;
 import javax.jws.Oneway;
 import javax.jws.WebMethod;

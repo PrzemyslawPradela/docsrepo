@@ -1,4 +1,4 @@
-package docsrepo.ws.entities;
+package docsrepo.soap.entities;
 
 import java.io.Serializable;
 

@@ -1,8 +1,8 @@
 package docsrepo.ejb;
 
-import docsrepo.ws.client.DocsService;
-import docsrepo.ws.client.DocsWebService;
-import docsrepo.ws.client.Document;
+import docsrepo.ejb.soap.client.DocsService;
+import docsrepo.ejb.soap.client.DocsWebService;
+import docsrepo.ejb.soap.client.Document;
 import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -12,7 +12,7 @@ import javax.xml.ws.WebServiceRef;
 @LocalBean
 public class DocsServiceBean {
 
-    @WebServiceRef(wsdlLocation = "http://localhost:8080/docsrepo-ws/DocsService?wsdl")
+    @WebServiceRef(wsdlLocation = "http://localhost:8080/docsrepo-soap/DocsService?wsdl")
     private DocsService service;
 
     public void addDocument(String name, String contentDescription, byte[] file) {

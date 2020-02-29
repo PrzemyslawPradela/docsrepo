@@ -10,6 +10,6 @@
         <module>docsrepo-ear</module>
         <module>docsrepo-ejb</module>
         <module>docsrepo-web</module>
-        <module>docsrepo-ws</module>
+        <module>docsrepo-soap</module>
     </modules>
 </project>

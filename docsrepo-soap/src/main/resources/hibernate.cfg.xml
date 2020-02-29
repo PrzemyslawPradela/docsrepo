@@ -40,12 +40,12 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 <hibernate-configuration>
-    <session-factory>
-        <property name="hibernate.dialect">org.hibernate.dialect.DerbyTenSevenDialect</property>
-        <property name="hibernate.connection.driver_class">org.apache.derby.jdbc.ClientDriver</property>
-        <property name="hibernate.connection.url">jdbc:derby://localhost:1527/docs</property>
-        <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">toor</property>
-        <mapping resource="docsrepo/ws/entities/Document.hbm.xml"/>
-    </session-factory>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.DerbyTenSevenDialect</property>
+    <property name="hibernate.connection.driver_class">org.apache.derby.jdbc.ClientDriver</property>
+    <property name="hibernate.connection.url">jdbc:derby://localhost:1527/docs</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">toor</property>
+    <mapping resource="docsrepo/soap/entities/Document.hbm.xml"/>
+  </session-factory>
 </hibernate-configuration>

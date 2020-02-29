@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="docsrepo.soap.entities.Document" optimistic-lock="version" schema="ROOT" table="DOCUMENT">
+    <id name="id" type="int">
+      <column name="ID" not-null="true"/>
+      <generator class="identity"/>
+    </id>
+    <property name="name" type="string">
+      <column length="512" name="NAME" not-null="true"/>
+    </property>
+    <property name="contentDescription" type="string">
+      <column length="2048" name="CONTENT_DESCRIPTION" not-null="true"/>
+    </property>
+    <property name="file" type="binary">
+      <column name="FILE" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>

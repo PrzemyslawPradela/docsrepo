@@ -96,13 +96,13 @@
                         </goals>
                         <configuration>
                             <wsdlFiles>
-                                <wsdlFile>localhost_8080/docsrepo-ws/DocsService.wsdl</wsdlFile>
+                                <wsdlFile>localhost_8080/docsrepo-soap/DocsService.wsdl</wsdlFile>
                             </wsdlFiles>
-                            <packageName>docsrepo.ws.client</packageName>
+                            <packageName>docsrepo.ejb.soap.client</packageName>
                             <vmArgs>
                                 <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
                             </vmArgs>
-                            <wsdlLocation>http://localhost:8080/docsrepo-ws/DocsService?wsdl</wsdlLocation>
+                            <wsdlLocation>http://localhost:8080/docsrepo-soap/DocsService?wsdl</wsdlLocation>
                             <staleFile>${project.build.directory}/jaxws/stale/DocsService.stale</staleFile>
                         </configuration>
                         <id>wsimport-generate-DocsService</id>
